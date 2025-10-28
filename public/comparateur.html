@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculateur ROI IA | L'Agence Sauvage - Estimez vos économies</title>
+  <meta name="description" content="Calculez combien vous pourriez économiser en automatisant vos processus avec l'IA. Estimation gratuite et instantanée de votre ROI.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/demarrer-styles.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__container">
+      <a href="/" class="header__logo">
+        <img src="/assets/images/logo.png" alt="L'Agence Sauvage">
+      </a>
+      
+      <nav class="nav">
+        <ul class="nav__menu">
+          <li><a href="/services" class="nav__link">Services</a></li>
+          <li><a href="/realisations" class="nav__link">Réalisations</a></li>
+          <li><a href="/ressources" class="nav__link">Ressources</a></li>
+          <li><a href="/about" class="nav__link">À propos</a></li>
+          <li><a href="/#audit-gratuit" class="btn btn-primary">Audit gratuit</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-secondary">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a> / <span>Calculateur ROI</span>
+      </div>
+      
+      <h1>Calculateur ROI IA<br><span class="highlight">Combien pourriez-vous économiser en automatisant ?</span></h1>
+      <p class="subtitle">
+        Estimez en 2 minutes le temps et l'argent que vous pourriez économiser<br>
+        en automatisant vos processus avec l'IA.
+      </p>
+    </div>
+  </section>
+
+  <!-- CALCULATEUR -->
+  <section class="section">
+    <div class="container">
+      
+      <div class="calculator-wrapper" style="max-width: 1000px; margin: 0 auto;">
+        
+        <!-- FORMULAIRE -->
+        <div class="calculator-form" style="background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <h2 style="margin-bottom: 2rem;">Entrez vos informations</h2>
+          
+          <form id="roiCalculator">
+            <!-- SECTION 1: INFORMATIONS GÉNÉRALES -->
+            <div class="form-section" style="margin-bottom: 3rem;">
+              <h3 style="color: var(--forest-green); margin-bottom: 1.5rem;">1. Informations générales</h3>
+              
+              <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Nombre d'employés</label>
+                <input type="number" id="employees" min="1" max="200" value="10" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+              </div>
+              
+              <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Coût horaire moyen d'un employé (€)</label>
+                <input type="number" id="hourlyCost" min="15" max="200" value="35" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                <small style="color: var(--stone-gray); font-size: 0.875rem;">En France, comptez 30-50€/h charges comprises</small>
+              </div>
+            </div>
+            
+            <!-- SECTION 2: TÂCHES RÉPÉTITIVES -->
+            <div class="form-section" style="margin-bottom: 3rem;">
+              <h3 style="color: var(--forest-green); margin-bottom: 1.5rem;">2. Temps passé sur les tâches répétitives</h3>
+              
+              <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="prospection" style="margin-right: 0.5rem;">
+                  Prospection & Lead Generation
+                </label>
+                <div id="prospectionInputs" style="display: none; margin-left: 2rem; margin-top: 0.5rem;">
+                  <input type="number" id="prospectionHours" min="0" max="100" value="8" placeholder="Heures par semaine" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                </div>
+              </div>
+              
+              <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="content" style="margin-right: 0.5rem;">
+                  Création de Contenu (posts, articles, emails)
+                </label>
+                <div id="contentInputs" style="display: none; margin-left: 2rem; margin-top: 0.5rem;">
+                  <input type="number" id="contentHours" min="0" max="100" value="10" placeholder="Heures par semaine" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                </div>
+              </div>
+              
+              <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="support" style="margin-right: 0.5rem;">
+                  Support Client & Emails
+                </label>
+                <div id="supportInputs" style="display: none; margin-left: 2rem; margin-top: 0.5rem;">
+                  <input type="number" id="supportHours" min="0" max="100" value="15" placeholder="Heures par semaine" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                </div>
+              </div>
+              
+              <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="reporting" style="margin-right: 0.5rem;">
+                  Reporting & Analyse de Données
+                </label>
+                <div id="reportingInputs" style="display: none; margin-left: 2rem; margin-top: 0.5rem;">
+                  <input type="number" id="reportingHours" min="0" max="100" value="6" placeholder="Heures par semaine" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                </div>
+              </div>
+              
+              <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="admin" style="margin-right: 0.5rem;">
+                  Tâches Administratives (saisie data, relances, etc.)
+                </label>
+                <div id="adminInputs" style="display: none; margin-left: 2rem; margin-top: 0.5rem;">
+                  <input type="number" id="adminHours" min="0" max="100" value="12" placeholder="Heures par semaine" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                </div>
+              </div>
+            </div>
+            
+            <!-- SECTION 3: OBJECTIFS -->
+            <div class="form-section" style="margin-bottom: 2rem;">
+              <h3 style="color: var(--forest-green); margin-bottom: 1.5rem;">3. Taux d'automatisation souhaité</h3>
+              
+              <div class="form-group">
+                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Quel % de ces tâches voulez-vous automatiser ?</label>
+                <input type="range" id="automationRate" min="30" max="90" value="70" step="10" style="width: 100%;">
+                <div style="text-align: center; font-size: 1.5rem; font-weight: 700; color: var(--electric-green); margin-top: 0.5rem;">
+                  <span id="automationRateValue">70</span>%
+                </div>
+              </div>
+            </div>
+            
+            <button type="button" onclick="calculateROI()" class="btn btn-primary btn-lg" style="width: 100%;">
+              Calculer mon ROI →
+            </button>
+          </form>
+        </div>
+
+        <!-- RÉSULTATS -->
+        <div id="results" class="calculator-results" style="display: none; margin-top: 3rem;">
+          
+          <!-- ÉCONOMIES -->
+          <div class="results-section" style="background: linear-gradient(135deg, var(--electric-green) 0%, var(--forest-green) 100%); color: white; padding: 3rem; border-radius: 12px; margin-bottom: 2rem;">
+            <h2 style="color: white; text-align: center; margin-bottom: 2rem;">🎉 Vos économies potentielles</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+              <div>
+                <div style="font-size: 3rem; font-weight: 700;" id="hoursPerWeek">0</div>
+                <div style="opacity: 0.9; margin-top: 0.5rem;">heures/semaine économisées</div>
+              </div>
+              
+              <div>
+                <div style="font-size: 3rem; font-weight: 700;" id="monthlyValue">0€</div>
+                <div style="opacity: 0.9; margin-top: 0.5rem;">valeur mensuelle</div>
+              </div>
+              
+              <div>
+                <div style="font-size: 3rem; font-weight: 700;" id="yearlyValue">0€</div>
+                <div style="opacity: 0.9; margin-top: 0.5rem;">économies annuelles</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BREAKDOWN -->
+          <div class="results-section" style="background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+            <h3 style="margin-bottom: 2rem;">Détail par processus</h3>
+            <div id="breakdown"></div>
+          </div>
+
+          <!-- COMPARAISON COÛT -->
+          <div class="results-section" style="background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+            <h3 style="margin-bottom: 2rem;">💰 Comparaison des coûts</h3>
+            
+            <table style="width: 100%; border-collapse: collapse;">
+              <thead>
+                <tr style="border-bottom: 2px solid var(--forest-green);">
+                  <th style="padding: 1rem; text-align: left;">Solution</th>
+                  <th style="padding: 1rem; text-align: right;">Coût mensuel</th>
+                  <th style="padding: 1rem; text-align: right;">Gain net mensuel</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--cream-bg);">
+                  <td style="padding: 1rem;">Ne rien faire (statu quo)</td>
+                  <td style="padding: 1rem; text-align: right; color: var(--burnt-orange);" id="statusQuoCost">0€</td>
+                  <td style="padding: 1rem; text-align: right;">-</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--cream-bg);">
+                  <td style="padding: 1rem;">Recruter un employé</td>
+                  <td style="padding: 1rem; text-align: right; color: var(--burnt-orange);">3 500€</td>
+                  <td style="padding: 1rem; text-align: right; color: var(--burnt-orange);" id="recruitmentNet">0€</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--cream-bg);">
+                  <td style="padding: 1rem;">Agence traditionnelle</td>
+                  <td style="padding: 1rem; text-align: right; color: var(--burnt-orange);">7 000€</td>
+                  <td style="padding: 1rem; text-align: right; color: var(--burnt-orange);" id="agencyNet">0€</td>
+                </tr>
+                <tr style="background: rgba(125, 194, 66, 0.1);">
+                  <td style="padding: 1rem;"><strong>L'Agence Sauvage (Abonnement)</strong></td>
+                  <td style="padding: 1rem; text-align: right; color: var(--electric-green); font-weight: 700;">800€</td>
+                  <td style="padding: 1rem; text-align: right; color: var(--electric-green); font-weight: 700;" id="ourServiceNet">0€</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- ROI TIMELINE -->
+          <div class="results-section" style="background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+            <h3 style="margin-bottom: 2rem;">📈 ROI sur 12 mois</h3>
+            
+            <div style="margin-top: 2rem;">
+              <p style="font-size: 1.125rem; margin-bottom: 1rem;">
+                <strong>Investissement total :</strong> <span id="totalInvestment">9 600€</span> (800€ x 12 mois)
+              </p>
+              <p style="font-size: 1.125rem; margin-bottom: 1rem;">
+                <strong>Économies totales :</strong> <span id="totalSavings" style="color: var(--electric-green); font-weight: 700;">0€</span>
+              </p>
+              <p style="font-size: 1.5rem; font-weight: 700; color: var(--electric-green);">
+                <strong>ROI :</strong> <span id="roiMultiplier">0x</span>
+              </p>
+              <p style="margin-top: 1rem; color: var(--stone-gray);">
+                Pour chaque euro investi, vous économisez <span id="roiPerEuro" style="font-weight: 600;">0€</span>.
+              </p>
+            </div>
+            
+            <div style="background: rgba(125, 194, 66, 0.1); padding: 1.5rem; border-radius: 8px; margin-top: 2rem; border-left: 4px solid var(--electric-green);">
+              <p style="font-weight: 600; margin-bottom: 0.5rem;">💡 Le saviez-vous ?</p>
+              <p style="font-size: 0.875rem;">
+                Nos clients atteignent le retour sur investissement en moyenne après <strong id="breakevenMonths">2</strong> mois d'abonnement.
+                Après ça, c'est du profit pur !
+              </p>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div style="text-align: center; background: var(--cream-bg); padding: 3rem; border-radius: 12px;">
+            <h3 style="margin-bottom: 1rem;">Prêt à réaliser ces économies ?</h3>
+            <p style="margin-bottom: 2rem;">Commencez par un audit gratuit pour valider ces estimations avec nos experts.</p>
+            <a href="/services/audit-ia" class="btn btn-primary btn-lg">Audit gratuit (30 min) →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="/assets/images/logo.png" alt="L'Agence Sauvage" style="width: 150px; margin-bottom: 1rem;">
+          <p>L'IA pour votre TPE/PME,<br>au prix d'un stagiaire.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/services/audit-ia">Audit IA gratuit</a></li>
+            <li><a href="/services/automatisation-processus">Automatisation</a></li>
+            <li><a href="/services/abonnement-mensuel">Abonnement mensuel</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Entreprise</h4>
+          <ul>
+            <li><a href="/about">À propos</a></li>
+            <li><a href="/realisations">Réalisations</a></li>
+            <li><a href="/ressources">Ressources</a></li>
+            <li><a href="/faq">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>Email: <a href="mailto:contact@lagencesauvage.com">contact@lagencesauvage.com</a></p>
+          <p>Tél: <a href="tel:+33686502030">+33 6 86 50 20 30</a></p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 L'AGENCE SAUVAGE. Tous droits réservés.</p>
+        <p>
+          <a href="/mentions-legales">Mentions légales</a> • 
+          <a href="/privacy">Confidentialité</a> • 
+          <a href="/cgv">CGV</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Gérer l'affichage des inputs selon les checkboxes
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        const inputsDiv = document.getElementById(this.id + 'Inputs');
+        if (inputsDiv) {
+          inputsDiv.style.display = this.checked ? 'block' : 'none';
+        }
+      });
+    });
+
+    // Mettre à jour l'affichage du taux d'automatisation
+    document.getElementById('automationRate').addEventListener('input', function() {
+      document.getElementById('automationRateValue').textContent = this.value;
+    });
+
+    // Calculer le ROI
+    function calculateROI() {
+      // Récupérer les valeurs
+      const hourlyCost = parseFloat(document.getElementById('hourlyCost').value);
+      const automationRate = parseFloat(document.getElementById('automationRate').value) / 100;
+      
+      // Calculer les heures économisées par processus
+      let totalHours = 0;
+      const processes = [];
+      
+      const tasks = [
+        { id: 'prospection', name: 'Prospection & Lead Gen', rate: 0.70 },
+        { id: 'content', name: 'Création de Contenu', rate: 0.80 },
+        { id: 'support', name: 'Support Client', rate: 0.70 },
+        { id: 'reporting', name: 'Reporting & Data', rate: 0.85 },
+        { id: 'admin', name: 'Tâches Admin', rate: 0.90 }
+      ];
+      
+      tasks.forEach(task => {
+        const checkbox = document.getElementById(task.id);
+        if (checkbox && checkbox.checked) {
+          const hours = parseFloat(document.getElementById(task.id + 'Hours').value) || 0;
+          const savedHours = hours * task.rate * automationRate;
+          totalHours += savedHours;
+          
+          processes.push({
+            name: task.name,
+            currentHours: hours,
+            savedHours: savedHours,
+            savedValue: savedHours * hourlyCost * 4.33 // 4.33 semaines/mois
+          });
+        }
+      });
+      
+      // Calculs
+      const monthlyValue = totalHours * hourlyCost * 4.33;
+      const yearlyValue = monthlyValue * 12;
+      
+      const ourServiceCost = 800;
+      const totalInvestment = ourServiceCost * 12;
+      const netMonthlySavings = monthlyValue - ourServiceCost;
+      const totalNetSavings = yearlyValue - totalInvestment;
+      const roiMultiplier = (totalNetSavings / totalInvestment).toFixed(1);
+      const breakevenMonths = Math.ceil(ourServiceCost / netMonthlySavings);
+      
+      // Afficher les résultats
+      document.getElementById('results').style.display = 'block';
+      document.getElementById('hoursPerWeek').textContent = totalHours.toFixed(1);
+      document.getElementById('monthlyValue').textContent = Math.round(monthlyValue).toLocaleString('fr-FR') + '€';
+      document.getElementById('yearlyValue').textContent = Math.round(yearlyValue).toLocaleString('fr-FR') + '€';
+      
+      // Breakdown par processus
+      let breakdownHTML = '';
+      processes.forEach(p => {
+        breakdownHTML += `
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--cream-bg);">
+            <div>
+              <strong>${p.name}</strong><br>
+              <small style="color: var(--stone-gray);">${p.currentHours.toFixed(1)}h/semaine → ${p.savedHours.toFixed(1)}h économisées</small>
+            </div>
+            <div style="text-align: right; font-weight: 700; color: var(--electric-green);">
+              ${Math.round(p.savedValue).toLocaleString('fr-FR')}€/mois
+            </div>
+          </div>
+        `;
+      });
+      document.getElementById('breakdown').innerHTML = breakdownHTML;
+      
+      // Comparaison des coûts
+      document.getElementById('statusQuoCost').textContent = Math.round(monthlyValue).toLocaleString('fr-FR') + '€';
+      document.getElementById('recruitmentNet').textContent = Math.round(monthlyValue - 3500).toLocaleString('fr-FR') + '€';
+      document.getElementById('agencyNet').textContent = Math.round(monthlyValue - 7000).toLocaleString('fr-FR') + '€';
+      document.getElementById('ourServiceNet').textContent = Math.round(netMonthlySavings).toLocaleString('fr-FR') + '€';
+      
+      // ROI timeline
+      document.getElementById('totalInvestment').textContent = totalInvestment.toLocaleString('fr-FR') + '€';
+      document.getElementById('totalSavings').textContent = Math.round(yearlyValue).toLocaleString('fr-FR') + '€';
+      document.getElementById('roiMultiplier').textContent = roiMultiplier + 'x';
+      document.getElementById('roiPerEuro').textContent = (parseFloat(roiMultiplier) + 1).toFixed(1) + '€';
+      document.getElementById('breakevenMonths').textContent = breakevenMonths;
+      
+      // Scroll vers les résultats
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  </script>
+</body>
+</html>

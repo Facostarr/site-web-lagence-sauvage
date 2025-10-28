@@ -1,0 +1,679 @@
+/* ==========================================================================
+   L'AGENCE SAUVAGE - STYLES COMPLETS + QUICK WINS
+   Intelligence Organique Design System
+   ✅ Quick Win #1: Menu Hamburger Mobile
+   ✅ Quick Win #4: Focus Visible (Accessibilité)
+   ✅ Quick Win #5: Hover Effects améliorés
+   ========================================================================== */
+
+/* Variables CSS - Design System */
+:root {
+  /* Couleurs primaires */
+  --forest-green: #224f3c;
+  --forest-green-dark: #1a3d2e;
+  --burnt-orange: #c96839;
+  --burnt-orange-dark: #b35a2e;
+  --electric-green: #7dc242;
+  --electric-green-dark: #6fb535;
+  
+  /* Couleurs neutres */
+  --cream: #f2ede1;
+  --stone-gray: #8c8982;
+  --warm-brown: #57412f;
+  --white: #ffffff;
+  
+  /* Espacements */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  
+  /* Typography */
+  --font-base: Arial, Helvetica, sans-serif;
+  
+  /* Transitions */
+  --transition: all 0.3s ease;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--forest-green);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ✅ QUICK WIN #4: Skip Link pour accessibilité */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--forest-green);
+  color: var(--white);
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 9999;
+  font-weight: 600;
+  border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.75rem; }
+
+p { margin-bottom: var(--space-sm); }
+
+/* ✅ QUICK WIN #4: Focus Visible sur tous les éléments interactifs */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+details summary:focus-visible {
+  outline: 2px solid var(--electric-green);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section {
+  padding: var(--space-3xl) 0;
+}
+
+/* Header & Navigation */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  box-shadow: 0 2px 10px rgba(34, 79, 60, 0.1);
+  z-index: 1000;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header__logo img {
+  height: 40px;
+}
+
+/* ✅ QUICK WIN #1: Bouton hamburger mobile */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.nav__toggle span {
+  width: 26px;
+  height: 3px;
+  background: var(--forest-green);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Animation hamburger → X */
+.nav__toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.nav__toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.nav__menu {
+  display: flex;
+  list-style: none;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.nav__link {
+  color: var(--forest-green);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.nav__link:hover {
+  color: var(--burnt-orange);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+  font-family: var(--font-base);
+  font-size: 1rem;
+}
+
+.btn-lg {
+  padding: var(--space-md) var(--space-xl);
+  font-size: 1.125rem;
+}
+
+.btn-primary {
+  background: var(--forest-green);
+  color: var(--white);
+}
+
+/* ✅ QUICK WIN #5: Hover effects améliorés */
+.btn-primary:hover {
+  background: var(--forest-green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(34, 79, 60, 0.2);
+}
+
+.btn-secondary {
+  background: var(--burnt-orange);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background: var(--burnt-orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(201, 104, 57, 0.2);
+}
+
+/* Hero Section */
+.hero {
+  margin-top: 68px;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+  padding: var(--space-3xl) 0;
+  text-align: center;
+}
+
+.hero h1 {
+  color: var(--forest-green);
+  margin-bottom: var(--space-md);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--stone-gray);
+  margin-bottom: var(--space-xl);
+}
+
+.cta-primary {
+  margin-top: var(--space-xl);
+}
+
+.trust-signal {
+  margin-top: var(--space-sm);
+  color: var(--electric-green);
+  font-size: 0.9rem;
+}
+
+/* Grid layouts */
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Cards */
+.card {
+  background: var(--white);
+  padding: var(--space-lg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(34, 79, 60, 0.1);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(34, 79, 60, 0.15);
+}
+
+/* Problem cards */
+.problem-card {
+  text-align: center;
+  padding: var(--space-lg);
+  transition: var(--transition);
+}
+
+.problem-card .icon {
+  font-size: 2rem;
+  color: var(--burnt-orange);
+  margin-bottom: var(--space-sm);
+  transition: transform 0.2s ease;
+}
+
+/* ✅ QUICK WIN #5: Hover sur icons */
+.problem-card:hover .icon {
+  transform: scale(1.15);
+}
+
+/* Benefit cards */
+.benefit-card {
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(34, 79, 60, 0.1);
+  transition: var(--transition);
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(34, 79, 60, 0.15);
+}
+
+.benefit-card h3 {
+  color: var(--forest-green);
+  margin-bottom: var(--space-sm);
+  transition: transform 0.2s ease;
+}
+
+/* ✅ QUICK WIN #5: Hover sur titres */
+.benefit-card:hover h3 {
+  transform: scale(1.05);
+}
+
+.benefit-card strong {
+  color: var(--burnt-orange);
+}
+
+/* Testimonials */
+.testimonial-card {
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: 12px;
+  border-left: 4px solid var(--electric-green);
+  box-shadow: 0 4px 12px rgba(34, 79, 60, 0.1);
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(34, 79, 60, 0.15);
+  border-left-width: 6px;
+}
+
+.testimonial-card cite {
+  font-style: normal;
+  color: var(--stone-gray);
+  font-size: 0.9rem;
+  display: block;
+  margin-top: var(--space-sm);
+}
+
+/* Stats */
+.stat {
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-size: 3rem;
+  color: var(--burnt-orange);
+  margin-bottom: var(--space-xs);
+}
+
+/* Forms */
+.audit-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.audit-form input,
+.audit-form select,
+.audit-form textarea {
+  padding: var(--space-sm);
+  border: 2px solid var(--stone-gray);
+  border-radius: 8px;
+  font-family: var(--font-base);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.audit-form input:focus,
+.audit-form select:focus,
+.audit-form textarea:focus {
+  outline: none;
+  border-color: var(--electric-green);
+  box-shadow: 0 0 0 3px rgba(125, 194, 66, 0.1);
+}
+
+/* ✅ QUICK WIN #2: Feedback messages formulaire */
+.form-feedback {
+  padding: var(--space-md);
+  border-radius: 8px;
+  margin-top: var(--space-sm);
+  font-weight: 600;
+  text-align: center;
+}
+
+.form-feedback.success {
+  background: rgba(125, 194, 66, 0.1);
+  border: 2px solid var(--electric-green);
+  color: var(--forest-green);
+}
+
+.form-feedback.error {
+  background: rgba(201, 104, 57, 0.1);
+  border: 2px solid var(--burnt-orange);
+  color: var(--burnt-orange-dark);
+}
+
+/* CTA Section */
+.cta-section {
+  background: var(--forest-green);
+  color: var(--white);
+  text-align: center;
+}
+
+.cta-section h2 {
+  color: var(--white);
+}
+
+/* Process steps */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.step {
+  text-align: center;
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: var(--electric-green);
+  color: var(--forest-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto var(--space-md);
+  transition: var(--transition);
+}
+
+.step:hover .step-number {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(125, 194, 66, 0.3);
+}
+
+/* FAQ */
+details {
+  background: var(--white);
+  padding: var(--space-md);
+  border-radius: 8px;
+  margin-bottom: var(--space-sm);
+  transition: var(--transition);
+}
+
+details:hover {
+  box-shadow: 0 4px 12px rgba(34, 79, 60, 0.1);
+}
+
+summary {
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--forest-green);
+  transition: var(--transition);
+}
+
+summary:hover {
+  color: var(--burnt-orange);
+}
+
+details p {
+  margin-top: var(--space-sm);
+  color: var(--stone-gray);
+}
+
+/* Footer */
+.footer {
+  background: var(--forest-green);
+  color: var(--white);
+  padding: var(--space-3xl) 0 var(--space-lg);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.footer h4 {
+  color: var(--white);
+  margin-bottom: var(--space-md);
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer ul li {
+  margin-bottom: var(--space-xs);
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer a:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+/* ========================================================================== */
+/* ✅ QUICK WIN #1: RESPONSIVE MOBILE avec Menu Hamburger
+/* ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Typography responsive */
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  
+  /* Grids en 1 colonne */
+  .grid-2, .grid-3, .grid-4,
+  .steps,
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  
+  /* ✅ Afficher le bouton hamburger */
+  .nav__toggle {
+    display: flex;
+  }
+  
+  /* ✅ Menu mobile en overlay */
+  .nav__menu {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--white);
+    flex-direction: column;
+    padding: var(--space-xl) var(--space-md);
+    gap: var(--space-md);
+    align-items: stretch;
+    box-shadow: 0 4px 12px rgba(34, 79, 60, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+  }
+  
+  /* ✅ Menu ouvert */
+  .nav__menu.active {
+    transform: translateX(0);
+  }
+  
+  /* ✅ Liens menu mobile */
+  .nav__menu li {
+    width: 100%;
+  }
+  
+  .nav__menu .nav__link {
+    display: block;
+    padding: var(--space-sm);
+    text-align: center;
+    font-size: 1.125rem;
+  }
+  
+  .nav__menu .btn {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Réduire les espacements sur mobile */
+  .section {
+    padding: var(--space-xl) 0;
+  }
+  
+  .hero {
+    padding: var(--space-xl) 0;
+  }
+  
+  /* Buttons responsive */
+  .btn-lg {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: 1rem;
+  }
+  
+  /* Stats responsive */
+  .stat strong {
+    font-size: 2.5rem;
+  }
+}
+
+/* Tablette (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.25rem; }
+}
+
+/* Mobile très petit (< 480px) */
+@media (max-width: 480px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+  
+  .container {
+    padding: 0 var(--space-sm);
+  }
+  
+  .stat strong {
+    font-size: 2rem;
+  }
+}
+
+/* ========================================================================== */
+/* Préférences utilisateur (a11y)
+/* ========================================================================== */
+
+/* Respect des préférences de mouvement réduit */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mode sombre (préparation future) */
+@media (prefers-color-scheme: dark) {
+  /* À implémenter si nécessaire */
+}
+
+/* Impression */
+@media print {
+  .header,
+  .nav__toggle,
+  .footer,
+  .btn,
+  .cta-section {
+    display: none;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+  
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "lagence-sauvage",
+  "version": "1.0.0",
+  "description": "Site web de L'Agence Sauvage - Intelligence Artificielle pour TPE/PME",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "intelligence-artificielle",
+    "automatisation",
+    "tpe",
+    "pme",
+    "ia"
+  ],
+  "author": "L'Agence Sauvage",
+  "license": "UNLICENSED",
+  "private": true
+}

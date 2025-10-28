@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://lagencesauvage.com/</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Page Démarrer (Getting Started) -->
+  <url>
+    <loc>https://lagencesauvage.com/demarrer.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Pages Services -->
+  <url>
+    <loc>https://lagencesauvage.com/services/audit-ia.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://lagencesauvage.com/services/automatisation-processus.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://lagencesauvage.com/services/abonnement-mensuel.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Page À Propos -->
+  <url>
+    <loc>https://lagencesauvage.com/about.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Page Réalisations -->
+  <url>
+    <loc>https://lagencesauvage.com/realisations.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Page FAQ -->
+  <url>
+    <loc>https://lagencesauvage.com/faq.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Page Comparateur ROI -->
+  <url>
+    <loc>https://lagencesauvage.com/comparateur.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Hub Ressources -->
+  <url>
+    <loc>https://lagencesauvage.com/ressources/</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Pages Légales (priorité basse, noindex) -->
+  <url>
+    <loc>https://lagencesauvage.com/mentions-legales.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+  
+  <url>
+    <loc>https://lagencesauvage.com/politique-confidentialite.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+  
+  <url>
+    <loc>https://lagencesauvage.com/cgv.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+  
+</urlset>
